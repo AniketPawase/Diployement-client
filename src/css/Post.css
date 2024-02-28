@@ -1,0 +1,128 @@
+/* Post.css */
+
+/* Post page container */
+.postPage {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  /* Left side containing the post content */
+  .leftSide {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  /* Post container */
+  .post {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  /* Title styling */
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  /* Body styling */
+  .body {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  /* Footer containing the post author and delete button */
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Delete button */
+  .footer button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  /* Delete button hover effect */
+  .footer button:hover {
+    background-color: #c82333;
+  }
+  
+  /* Right side containing the comment section */
+  .rightSide {
+    flex: 1;
+  }
+  
+  /* Add comment container */
+  .addCommentContainer {
+    margin-bottom: 20px;
+  }
+  
+  /* Input field for adding comment */
+  .addCommentContainer input[type="text"] {
+    width: calc(100% - 100px);
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Button for adding comment */
+  .addCommentContainer button {
+    width: 100px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* List of comments */
+  .listOfComments {
+    max-height: 300px; /* Limit height for overflow */
+    overflow-y: auto; /* Enable vertical scrollbar if necessary */
+  }
+  
+  /* Individual comment */
+  .comment {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  /* Delete button for comments */
+  .deleteButton {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  /* Delete button hover effect for comments */
+  .deleteButton:hover {
+    background-color: #c82333;
+  }
+  

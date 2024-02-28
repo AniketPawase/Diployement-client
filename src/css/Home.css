@@ -1,0 +1,51 @@
+.home-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .post {
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .body {
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .username {
+    font-weight: bold;
+  }
+  
+  .buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .likeBttn,
+  .unlikeBttn {
+    cursor: pointer;
+  }
+  
+  .likeBttn:hover,
+  .unlikeBttn:hover {
+    color: red;
+  }
+  

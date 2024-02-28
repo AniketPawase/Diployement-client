@@ -1,0 +1,96 @@
+/* Profile.css */
+
+/* Profile page container */
+.profilePageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Basic info section */
+  .basicInfo {
+    margin-bottom: 20px;
+  }
+  
+  /* Username styling */
+  .basicInfo h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #bd8383; /* Adjust color as needed */
+    margin-bottom: 10px;
+  }
+  
+  /* Button for changing password */
+  .basicInfo button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Button hover effect */
+  .basicInfo button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* List of posts */
+  .listOfPost {
+    width: 100%;
+  }
+  
+  /* Individual post */
+  .post {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title styling */
+  .post .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  /* Body styling */
+  .post .body {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  /* Footer containing post author and likes */
+  .post .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Username styling in footer */
+  .post .footer .username {
+    font-size: 14px;
+    color: #777777;
+  }
+  
+  /* Number of likes styling */
+  .post .footer .buttons label {
+    font-size: 14px;
+    color: #777777;
+  }
+
+  .listOfPost h3{
+    font-size: 18px;
+    font-weight: bolder;
+    color: #3459a5; /* Adjust color as needed */
+    margin-bottom: 10px;
+    margin-left: -580px ;
+  }
+  
+  
