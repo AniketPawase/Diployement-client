@@ -50,40 +50,45 @@ function App() {
 
   return (
     <>
-        <div className="App">
-      <AuthContext.Provider value={{ authState, setAuthState }}>
-        <Router>
-          <div className='navbar'>
-            <div className='links'>
-              {!authState.status ? (
-                <>
-                {/* Visible when not logged in */}
-                </>
-              ) :
-                <>
-                  <Link to={'/'} className="nav-link">Home Page</Link>
-                  <Link to={'/createPost'} className="nav-link">Create A Post</Link>
-                </>}
+      <div className="App">
+        <AuthContext.Provider value={{ authState, setAuthState }}>
+          <Router>
+            <div className='navbar'>
+              <div className='links'>
+                {!authState.status ? (
+                  <>
+                    {/* Visible when not logged in */}
+                  </>
+                ) : (
+                  <>
+                    <Link to={'/'} className="nav-link">Home Page</Link>
+                    <Link to={'/createPost'} className="nav-link">Create A Post</Link>
+                  </>
+                )}
+              </div>
+              <div className='loggedInContainer'>
+                {authState.status && (
+                  <>
+                    <h3>{authState.username}</h3>
+                    <button onClick={logout} className="logout-button">Logout</button>
+                  </>
+                )}
+              </div>
             </div>
-            <div className='loggedInContainer'>
-              <h3>{authState?.username}</h3>
-              {authState.status && <button onClick={logout} className="logout-button">Logout</button>}
-            </div>
-          </div>
-          <Routes>
-            <Route path='/' element={<Home/>} />
-            <Route path='/createPost' element={<CreatePost/>} />
-            <Route path='/post/:id' element={<Post/>} />
-            <Route path='/login' element={<Login/>} />
-            <Route path='/registration' element={<Registration/>} />
-            <Route path='/profile/:id' element={<Profile/>} />
-            <Route path='/changePassword' element={<ChangePassword/>} />
-            <Route path='*' element={<PageNotFound/>} />
-          </Routes>
-        </Router>
-      </AuthContext.Provider>
-    </div>
-    <ToastContainer/>
+            <Routes>
+              <Route path='/' element={<Home/>} />
+              <Route path='/createPost' element={<CreatePost/>} />
+              <Route path='/post/:id' element={<Post/>} />
+              <Route path='/login' element={<Login/>} />
+              <Route path='/registration' element={<Registration/>} />
+              <Route path='/profile/:id' element={<Profile/>} />
+              <Route path='/changePassword' element={<ChangePassword/>} />
+              <Route path='*' element={<PageNotFound/>} />
+            </Routes>
+          </Router>
+        </AuthContext.Provider>
+      </div>
+      <ToastContainer/>
     </>
   );
 }
