@@ -109,17 +109,17 @@
   }
   
   /* Delete button for comments */
-  .deleteButton {
+  /* .deleteButton {
     position: absolute;
     top: 5px;
     right: 5px;
-    /* background-color: #dc3545; */
+    background-color: #dc3545;
     color: #fff;
     border: none;
-    /* border-radius: 50%; */
+    border-radius: 50%;
     padding: 5px;
     cursor: pointer;
-  }
+  } */
   
   /* Delete button hover effect for comments */
   .deleteButton:hover {
