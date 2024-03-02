@@ -23,7 +23,7 @@ function App() {
   });
 
   useEffect(() => {
-    axios.get("http://localhost:3001/auth/auth", {
+    axios.get("https://deployement-server.vercel.app/auth/auth", {
       headers: {
         accessToken: localStorage.getItem("accessToken"),
       }
@@ -57,8 +57,7 @@ function App() {
             <div className='links'>
               {!authState.status ? (
                 <>
-                  <Link to={'/login'} className="nav-link">LOGIN</Link>
-                  <Link to={'/registration'} className="nav-link">Registration</Link>
+                {/* Visible when not logged in */}
                 </>
               ) :
                 <>
@@ -67,7 +66,7 @@ function App() {
                 </>}
             </div>
             <div className='loggedInContainer'>
-              <h3>{authState.username}</h3>
+              <h3>{authState?.username}</h3>
               {authState.status && <button onClick={logout} className="logout-button">Logout</button>}
             </div>
           </div>

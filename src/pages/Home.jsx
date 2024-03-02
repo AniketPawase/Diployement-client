@@ -19,7 +19,7 @@ function Home() {
       navigate('/login')
     }
     else{
-    axios.get('http://localhost:3001/posts',{
+    axios.get('https://deployement-server.vercel.app/posts',{
       headers:{ accessToken: localStorage.getItem("accessToken")},
     }).then((response)=>{
     console.log(response.data.listOfPosts);
@@ -35,7 +35,7 @@ function Home() {
   },[authState.status,navigate]);
 
   const likeAPost =(postId)=>{
-    axios.post("http://localhost:3001/likes",{ PostId : postId},{
+    axios.post("https://deployement-server.vercel.app/likes",{ PostId : postId},{
       headers: { accessToken: localStorage.getItem("accessToken")}
     }).then((response)=>{
       setlistOfPosts(listOfPosts.map((post)=>{

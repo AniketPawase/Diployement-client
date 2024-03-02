@@ -29,7 +29,7 @@ function CreatePost() {
     })
 
     const onSubmit =(data)=>{
-        axios.post('http://localhost:3001/posts',data,{
+        axios.post('https://deployement-server.vercel.app/posts',data,{
             headers:{
                 accessToken: localStorage.getItem("accessToken")
             }

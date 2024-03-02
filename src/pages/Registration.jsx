@@ -3,7 +3,7 @@ import '../css/Registration.css'
 import axios from  'axios';
 import {Formik, Form, Field,ErrorMessage} from 'formik'
 import * as Yup from 'yup';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {toast} from "react-toastify" 
 
 function Registration() {
@@ -21,7 +21,7 @@ function Registration() {
     })
 
     const onSubmit=(data)=>{
-        axios.post("http://localhost:3001/auth",data)
+        axios.post("https://deployement-server.vercel.app/auth",data)
         .then(()=>{
             console.log(data);
             toast.info("Registered SuccesFully")
@@ -38,7 +38,7 @@ function Registration() {
         validationSchema={validationSchema}
     >
         <Form className='formContainer1'>
-        <h2>Register</h2>
+        <h2>Sign-Up</h2>
             <label htmlFor="username">Username:</label>   
             <Field id="username" type="text" name="username" placeholder="Enter username" />
             <ErrorMessage name='username' component="span" className="error-message" />
@@ -48,6 +48,7 @@ function Registration() {
             <ErrorMessage name='password' component="span" className="error-message" />
 
             <button type='submit'>Register</button>
+            <div className='optional'>Already registered?<Link to="/login"> Login</Link></div>
         </Form>
     </Formik>
 </div>

@@ -14,12 +14,12 @@ function Post() {
     const navigate = useNavigate();
 
     useEffect(()=>{
-        axios.get(`http://localhost:3001/posts/${id}`).then((response)=>{
+        axios.get(`https://deployement-server.vercel.app/posts/${id}`).then((response)=>{
         console.log(response.data);
         setPostObj(response.data);
         });
 
-        axios.get(`http://localhost:3001/comments/${id}`).then((response)=>{
+        axios.get(`https://deployement-server.vercel.app/comments/${id}`).then((response)=>{
         console.log(response.data);
         setComments(response.data);
         });
@@ -29,7 +29,7 @@ function Post() {
     const addComment = () =>{
         axios
         .post(
-          "http://localhost:3001/comments",
+          "https://deployement-server.vercel.app/comments",
           {
             commentBody: newComment,
             PostId: id,
@@ -53,7 +53,7 @@ function Post() {
 
     //Deleting Comment
     const deleteComment=(id)=>{
-      axios.delete(`http://localhost:3001/comments/${id}`,{
+      axios.delete(`https://deployement-server.vercel.app/comments/${id}`,{
         headers:{
           accessToken: localStorage.getItem("accessToken")
         }
@@ -68,7 +68,7 @@ function Post() {
     //Deleting a Post
 //Deleting a Post
 const deletePost = (id) => {
-  axios.delete(`http://localhost:3001/posts/${id}`, {
+  axios.delete(`https://deployement-server.vercel.app/posts/${id}`, {
     headers: {
       accessToken: localStorage.getItem("accessToken"),
     },
@@ -88,7 +88,7 @@ const deletePost = (id) => {
   const editPost =(option)=>{
     if(option === 'title'){
       let newTitle = prompt('Enter new Title')
-      axios.put("http://localhost:3001/posts/title",
+      axios.put("https://deployement-server.vercel.app/posts/title",
       {newTitle: newTitle,
          id: id},{
         headers:{
@@ -98,7 +98,7 @@ const deletePost = (id) => {
       setPostObj({...postObj,title: newTitle})
     }else{
       let newPostText = prompt('Enter new Text')
-      axios.put("http://localhost:3001/posts/postText",
+      axios.put("https://deployement-server.vercel.app/posts/postText",
       {newText: newPostText,
          id: id},{
         headers:{

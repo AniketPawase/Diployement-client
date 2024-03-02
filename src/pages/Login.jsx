@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../helpers/authContext";
 import '../css/Login.css';
 import {toast} from "react-toastify" 
@@ -17,7 +17,7 @@ function Login() {
 
         setIsLoggingIn(true); // Set login request in progress
         const data = { username: username, password: password };
-        axios.post("http://localhost:3001/auth/login", data)
+        axios.post("https://deployement-server.vercel.app/auth/login", data)
             .then((response) => {
                 console.log(response.data);
                 if (response.data.error) {
@@ -63,6 +63,7 @@ function Login() {
                 <button onClick={login} className={isLoggingIn ? "logging-in" : ""}>
                     {isLoggingIn ? "Logging in..." : "Login"}
                 </button>
+                <div className="optional">Not registered yet? <Link to="/registration">Register</Link></div>
             </div>
         </div>
     );

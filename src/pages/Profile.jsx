@@ -13,12 +13,12 @@ function Profile() {
     const {authState} = useContext(AuthContext)
 
     useEffect(()=>{
-        axios.get(`http://localhost:3001/auth/basicInfo/${id}`)
+        axios.get(`https://deployement-server.vercel.app/auth/basicInfo/${id}`)
         .then((response)=>{
             console.log(response.data);
             setUsername(response.data.username);
         })
-        axios.get(`http://localhost:3001/posts/byUser/${id}`)
+        axios.get(`https://deployement-server.vercel.app/posts/byUser/${id}`)
         .then((response1)=>{
             console.log(response1.data);
             setListOfPosts(response1.data)

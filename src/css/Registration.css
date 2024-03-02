@@ -44,3 +44,21 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+.optional {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    transition: color 0.3s ease;
+  }
+  
+  .optional a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .optional a:hover {
+    color: #2980b9;
+  }
