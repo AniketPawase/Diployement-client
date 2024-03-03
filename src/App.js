@@ -1,5 +1,5 @@
 import './css/App.css';
-import { BrowserRouter as Router, Routes, Route, Link ,useNavigate} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import CreatePost from './pages/CreatePost';
 import Post from './pages/Post';
@@ -17,7 +17,6 @@ import {toast} from "react-toastify"
 
 
 function App() {
-  const navigate = useNavigate();
   const [authState, setAuthState] = useState({
     username: "",
     id: 0,
@@ -48,7 +47,7 @@ function App() {
     localStorage.removeItem("accessToken");
     setAuthState({ username: "", id: 0, status: false });
     toast.error("Sorry to see U Go.Vist Again :)")
-    navigate("/login");
+    return <Link to="/login" />;
   }
 
   return (
